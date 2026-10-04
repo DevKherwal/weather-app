@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f1fa;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.app {
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 60px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    color: #1d4e89;
+}
+
+#searchForm {
+    display: flex;
+    gap: 10px;
+}
+
+#cityInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 16px;
+    background-color: #1d4e89;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #163a66;
+}
+
+#message {
+    color: #b00020;
+    min-height: 20px;
+}
+
+#result {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#result h2 {
+    margin-bottom: 5px;
+}
+
+#result p {
+    margin: 8px 0;
+    font-size: 18px;
+}
