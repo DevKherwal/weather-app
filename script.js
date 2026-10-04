@@ -1,9 +1,4 @@
-const searchForm = document.querySelector("#searchForm");
-const cityInput = document.querySelector("#cityInput");
-const message = document.querySelector("#message");
-const result = document.querySelector("#result");
-
-searchForm.addEventListener("submit", function (event) {
+searchForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const city = cityInput.value.trim();
@@ -13,5 +8,16 @@ searchForm.addEventListener("submit", function (event) {
         return;
     }
 
-    message.textContent = "You searched for: " + city;
+    message.textContent = "Loading...";
+
+    try {
+        const geoUrl = "https://geocoding-api.open-meteo.com/v1/search?name=" + encodeURIComponent(city) + "&count=1";
+        const geoResponse = await fetch(geoUrl);
+        const geoData = await geoResponse.json();
+
+        console.log(geoData);
+        message.textContent = "";
+    } catch (error) {
+        message.textContent = "Something went wrong. Check your internet and try again.";
+    }
 });
